@@ -49,3 +49,11 @@ Most routine apps for neurodivergent kids rely on smartphones or tablets. But sc
 * **Debounced Buttons:** Uses internal `INPUT_PULLUP` resistors to stop random button triggers and floating pins.
 * **Edge Detection:** Ensures the PIR sensor triggers the welcome sequence only once per room entry.
 * **Hardware-Ready:** Includes commented blocks with 30s sensor warm-up and actual MP3 playback timing for physical assembly.
+
+---
+
+### Planned Enhancements
+
+* **Smart Stagnation Detection (PIR Timeout):** If the PIR sensor detects the child is still present long after a prompt finishes without pressing "Task Complete" or "Break", the system will trigger a soft re-engagement prompt or alert parents via a local buzzer/LED indicator that the child might be stuck or overwhelmed.
+* **Parent Companion Dashboard:** Adding a low-power ESP32 or Wi-Fi module to silently log routine completions and button presses to a parent's phone without adding any screens to the child's environment.
+* **Custom Family Voice Recordings:** Allowing parents/therapists to record personalized voice prompts directly onto the SD card.
