@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Smart Home Routine Assistant",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -72.8,
+      "left": -199.38,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_red",
+      "top": 160,
+      "left": -120,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_blue",
+      "top": 160,
+      "left": -30,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_yellow",
+      "top": 160,
+      "left": 60,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_green",
+      "top": 160,
+      "left": 150,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": -55.2, "left": 241.8, "attrs": {} },
+    { "type": "wokwi-dfplayer-mini", "id": "dfplayer", "top": -30, "left": 180, "attrs": {} }
+  ],
+  "connections": [
+    [ "nano:GND.1", "pir1:GND", "black", [ "v0" ] ],
+    [ "nano:5V", "pir1:VCC", "red", [ "v0" ] ],
+    [ "pir1:OUT", "nano:2", "green", [ "v0" ] ],
+    [ "btn_red:2.r", "nano:GND.2", "black", [ "v0" ] ],
+    [ "btn_blue:2.r", "nano:GND.2", "black", [ "v0" ] ],
+    [ "btn_yellow:2.r", "nano:GND.2", "black", [ "v0" ] ],
+    [ "btn_green:2.r", "nano:GND.2", "black", [ "v0" ] ],
+    [ "btn_red:1.r", "nano:3", "red", [ "v-182.6", "h168.2" ] ],
+    [ "btn_blue:1.r", "nano:4", "blue", [ "v-192.2", "h59" ] ],
+    [ "btn_yellow:1.r", "nano:5", "yellow", [ "v-38.6", "h-194.2", "v-144" ] ],
+    [ "btn_green:1.r", "nano:6", "green", [ "v-57.8", "h-236.2", "v-144", "h96" ] ],
+    [ "nano:9", "buzzer:1", "purple", [ "v0" ] ],
+    [ "nano:GND.1", "buzzer:2", "black", [ "v0" ] ],
+    [ "nano:10", "dfplayer:TX", "gray", [ "v0" ] ],
+    [ "nano:11", "dfplayer:RX", "white", [ "v0" ] ],
+    [ "nano:5V", "dfplayer:VCC", "red", [ "v0" ] ],
+    [ "nano:GND.1", "dfplayer:GND", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
